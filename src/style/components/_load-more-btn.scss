@@ -1,0 +1,27 @@
+button.load-more {
+	background-color: $primary;
+	color: $secondary;
+	border-radius: 100px;
+	padding: 10px 20px;
+	font-weight: 600;
+	min-width: 100px;
+	margin: 30px auto;
+	display: block;
+	cursor: pointer;
+
+	&.end, &.disable {
+		cursor: not-allowed;
+	}
+
+	&.end {
+		opacity: 0.5;
+	}
+
+	&:hover {
+		background-color: $primary-2;
+	}
+
+	&:active {
+		background-color: $primary-3
+	}
+}

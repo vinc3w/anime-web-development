@@ -1,0 +1,59 @@
+.search-filter-panel {
+
+	@media (max-width: 720px) {
+		max-height: 58.6px;
+		transition: max-height 100ms ease;
+		
+		&:not(.open) {
+			overflow: hidden;
+		}
+
+		&.open {
+			max-height: 1000px;
+		}
+
+		.title {
+			background-color: $primary;
+			padding: 10px;
+			cursor: pointer;
+			margin-bottom: 20px;
+		}
+
+		li {
+			list-style-type: none;
+		}
+
+		button {
+			margin: 20px 0;
+		}
+
+		.select-menu {
+			margin-top: 10px;
+		}
+	}
+
+	.select-menu .value {
+		background-color: transparent;
+		border: 2px solid $secondary;
+		border-radius: 5px;
+		color: $secondary;
+	}
+	
+	button {
+		height: 30px;
+		width: 100%;
+		background-color: $primary;
+		color: $secondary;
+		border-radius: 5px;
+		cursor: pointer;
+		font-weight: 700;
+
+		&:hover {
+			background-color: $primary-2;
+		}
+
+		&:active {
+			background-color: $primary-3;
+		}
+	}
+}

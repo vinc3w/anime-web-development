@@ -1,0 +1,121 @@
+.season-panel-search {
+
+	.select-menu .value, input[type=number] {
+		background-color: transparent;
+		border: 2px solid $secondary;
+		border-radius: 5px;
+		color: $secondary;
+	}
+
+	input[type=number] {
+		height:  35px;
+		width: 100%;
+		padding: 0 10px;
+
+		&::placeholder {
+			color: $secondary;
+		}
+	}
+	
+	button {
+		height: 30px;
+		width: 100%;
+		background-color: $primary;
+		color: $secondary;
+		border-radius: 5px;
+		cursor: pointer;
+		font-weight: 700;
+
+		&:hover {
+			background-color: $primary-2;
+		}
+
+		&:active {
+			background-color: $primary-3;
+		}
+	}
+}
+
+.season-panel-nav li.on-here a {
+	color: $primary !important;
+	font-weight: 700;
+}
+
+.season .season-panel {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column-reverse;
+
+	ul {
+		width: 100%;
+	}
+	
+	.season-panel-search {
+
+		.title {
+			background-color: $primary;
+			padding: 7px 10px;
+			margin-bottom: 20px;
+		}
+	
+		input[type=number] {
+			margin: 5px 0;
+		}
+	
+		button {
+			margin-bottom: 20px;
+		}
+	}
+
+	.season-panel-nav {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		background-color: $dark-bg;
+		text-align: center;
+		overflow-x: auto;
+		margin-bottom: 20px;
+		max-width: calc(100vw - 6vw);
+
+		.title {
+			display: none;
+		}
+
+		a {
+			display: block;
+			padding: 10px 0;
+			width: 70px;
+			border-radius: 5px;
+		}
+	}
+}
+
+.season {
+	margin-bottom: 20px;
+
+	table {
+		width: 100%;
+		text-align: center;
+
+		& + .throbber-container {
+			margin-top: 20px;
+		}
+
+		tr {
+
+			&:first-of-type td {
+				background-color: $dark-bg;
+				padding: 10px 10px;
+			}
+	
+			&:nth-of-type(odd) {
+				background-color: $light-bg-2;
+			}
+			
+			td {
+				padding: 15px 10px;
+			}
+		}
+	}
+}

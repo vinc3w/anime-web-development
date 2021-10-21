@@ -1,0 +1,20 @@
+.info-list {
+
+	li {
+		margin: 7px 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 5px;
+
+		.label {
+			font-size: 12px;
+			color: rgba(255, 255, 255, 0.5);
+		}
+	
+		.value {
+			font-size: 15px;
+			margin-left: 5px;
+		}
+	}
+}

@@ -1,0 +1,156 @@
+.character-person {
+	width: 100%;
+	margin-bottom: 20px;
+	
+	&.home-page {
+		width: 100%;
+
+		.top-part{
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			@media (max-width: 550px) {
+				align-items: center;
+				flex-direction: column;
+			
+				.images-link {
+					margin: 0 0 20px 0 !important;
+				}
+			}
+			
+			.images-link {
+				margin-right: 20px;
+			
+				img {
+					width: 200px;
+				}
+
+				span {
+					display: block;
+					text-align: center;
+					margin-top: 10px;
+				}
+			}
+	
+			p {
+				white-space: pre-line;
+			}
+	
+			.info-list {
+				margin-top: 10px;
+			}
+		}
+	
+		> .item:nth-of-type(odd) {
+			background-color: $light-bg-2;
+		}
+	
+		.item {
+			display: flex;
+			justify-content: flex-start;
+			padding: 10px;
+	
+			.img {
+				@include bg-img;
+				width: 60px;
+				height: 90px;
+				margin-right: 10px;
+			}
+	
+			div {
+				a {
+					font-size: 18px;
+					margin-bottom: 5px;
+				}
+				
+				> * {
+					display: block;
+				}
+			}
+		}
+		
+		.item-2 {
+			display: flex;
+			gap: 20px;
+	
+			&:nth-of-type(odd) {
+				background-color: $light-bg-2;
+			}
+			
+			.item {
+				width: 50%;
+			}
+			
+			@media (max-width: 500px) {
+
+				.img {
+					margin: 0 0 10px 0 !important;
+				}
+
+				.item:first-of-type {
+					flex-direction: column;
+				}
+
+				.item:last-of-type {
+					align-items: flex-end;
+					flex-direction: column-reverse;
+				}
+			}
+	
+			.item:last-of-type {
+				justify-content: flex-end;
+				text-align: right;
+	
+				.img {
+					margin: 0 0 0 10px;
+				}
+			}
+		}
+	}
+
+	&.pictures {
+
+		.back {
+			background-color: $primary;
+			padding: 10px 15px;
+			margin-top: 50px;
+			display: inline-block;
+			font-weight: 700;
+		}
+		
+		.images {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			gap: 40px 20px;
+	
+			img {
+				width: calc(20% - (20px * 4/5));
+				transition: transform 200ms ease;
+				cursor: pointer;
+		
+				&:hover {
+					transform: scale(1.05, 1.05);
+				}
+		
+				@media (max-width: 890px) {
+					width: calc(25% - (20px * 3/4));
+				}
+		
+				@media (max-width: 700px) {
+					width: calc(33.33% - (20px * 2/3));
+				}
+		
+				@media (max-width: 500px) {
+					width: calc(50% - 10px);
+				}
+		
+				@media (max-width: 300px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

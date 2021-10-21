@@ -1,0 +1,2946 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+/********** dark theme **********/
+/********************************/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #343941;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #54575c;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #616469;
+}
+
+img {
+  display: block;
+}
+
+input, button, textarea {
+  border: none;
+  outline: none;
+}
+
+.cover-content {
+  position: relative;
+}
+
+.cover-content .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(247, 247, 245, 0.8);
+  -webkit-transition: color 100ms ease;
+  transition: color 100ms ease;
+}
+
+a:hover {
+  color: #F7F7F5;
+}
+
+li {
+  list-style-type: none;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #343941;
+  font-family: "Opens Sans", sans-serif;
+  color: #F7F7F5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App main {
+  padding: 60px 3vw 0 3vw;
+  width: 100%;
+}
+
+.App main .sub {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.App main .sub .heading, .App main .sub .heading-title {
+  background-color: #FF4C29;
+  margin: 20px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.App main .sub .heading span, .App main .sub .heading-title span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.App main .sub .heading-title {
+  margin-top: 50px;
+}
+
+.App main .sub .home, .App main .sub .top, .App main .sub .advanced-search, .App main .sub .search, .App main .sub .genre, .App main .sub .anime-manga, .App main .sub .season, .App main .sub .schedule, .App main .sub .producer {
+  width: calc(100% - 240px);
+}
+
+@media (max-width: 720px) {
+  .App main .sub {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App main .sub .home, .App main .sub .top, .App main .sub .advanced-search, .App main .sub .search, .App main .sub .genre, .App main .sub .anime-manga, .App main .sub .season, .App main .sub .schedule, .App main .sub .produce {
+    width: 100%;
+  }
+}
+
+.App .select-menu {
+  position: relative;
+  font-size: 14px;
+  color: #222831;
+}
+
+.App .select-menu .value {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #F7F7F5;
+}
+
+.App .select-menu .value:hover {
+  background-color: #F1F1F1;
+}
+
+.App .select-menu .value:active {
+  background-color: #EDEDED;
+}
+
+.App .select-menu .options {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #F7F7F5;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease;
+  transition: opacity 100ms ease;
+  z-index: 800;
+}
+
+.App .select-menu .options li {
+  height: 28px;
+  width: 100%;
+  padding: 5px 10px;
+  list-style-type: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .select-menu .options li:not(.selected) {
+  padding-right: 38px;
+}
+
+.App .select-menu .options li.selected {
+  background-color: #F1F1F1;
+}
+
+.App .select-menu .options li.selected i {
+  display: block;
+}
+
+.App .select-menu .options li i {
+  margin-left: 10px;
+  font-size: 18px;
+  display: none;
+}
+
+.App .select-menu .options li:hover {
+  background-color: #F1F1F1;
+}
+
+.App .select-menu .options li:active {
+  background-color: #EDEDED;
+}
+
+.App .select-link-menu {
+  position: relative;
+}
+
+.App .select-link-menu .options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #F7F7F5;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease;
+  transition: opacity 100ms ease;
+  font-size: 14px;
+  text-align: left;
+}
+
+.App .select-link-menu .options li {
+  width: 100%;
+  list-style-type: none;
+}
+
+.App .select-link-menu .options li a {
+  display: block;
+  padding: 7px 15px !important;
+  color: #222831 !important;
+}
+
+.App .select-link-menu .options li a:hover {
+  background-color: #F1F1F1;
+  text-decoration: none !important;
+}
+
+.App .select-link-menu .options li a:active {
+  background-color: #EDEDED;
+}
+
+.App .throbber-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  width: 100% !important;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.App .throbber {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.App .throbber li {
+  position: absolute;
+  display: block;
+  border-radius: 4px;
+  background-color: #999;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  margin-left: -3px;
+  opacity: 0;
+  -webkit-animation: blink .8s ease infinite;
+          animation: blink .8s ease infinite;
+}
+
+.App .throbber li:nth-child(1) {
+  top: 0%;
+  left: 50%;
+}
+
+.App .throbber li:nth-child(2) {
+  top: 15%;
+  left: 85%;
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+
+.App .throbber li:nth-child(3) {
+  top: 50%;
+  left: 100%;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.App .throbber li:nth-child(4) {
+  top: 85%;
+  left: 85%;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.App .throbber li:nth-child(5) {
+  top: 100%;
+  left: 50%;
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+.App .throbber li:nth-child(6) {
+  top: 85%;
+  left: 15%;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+.App .throbber li:nth-child(7) {
+  top: 50%;
+  left: 0%;
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+.App .throbber li:nth-child(8) {
+  top: 15%;
+  left: 15%;
+  -webkit-animation-delay: .7s;
+          animation-delay: .7s;
+}
+
+.App .list-box-container .list-box, .App .list-box-container .list-box-skeleton {
+  height: 120px;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.App .list-box-container .list-box:nth-of-type(odd), .App .list-box-container .list-box-skeleton:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .list-box-container .list-box .rank, .App .list-box-container .list-box-skeleton .rank {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  min-width: 60px;
+  max-width: 60px;
+  font-weight: 1000;
+}
+
+.App .list-box-container .list-box .title, .App .list-box-container .list-box-skeleton .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.App .list-box-container .list-box .title .item-img, .App .list-box-container .list-box-skeleton .title .item-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 75px;
+  margin-right: 10px;
+}
+
+.App .list-box-container .list-box .title .title-a, .App .list-box-container .list-box-skeleton .title .title-a {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.App .list-box-container .list-box .title .title-a.skeleton-loading, .App .list-box-container .list-box-skeleton .title .title-a.skeleton-loading {
+  height: 20px;
+  width: 300px;
+}
+
+.App .list-box-container .list-box .title .title-a h2, .App .list-box-container .list-box-skeleton .title .title-a h2 {
+  font-size: 18px;
+}
+
+.App .list-box-container .list-box .title .title-a h2 span, .App .list-box-container .list-box-skeleton .title .title-a h2 span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.App .list-box-container .list-box .title .info, .App .list-box-container .list-box-skeleton .title .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+}
+
+.App .list-box-container .list-box .title .info.skeleton-loading, .App .list-box-container .list-box-skeleton .title .info.skeleton-loading {
+  height: 15px;
+  width: 120px;
+}
+
+.App .list-box-container .list-box .title .info .label, .App .list-box-container .list-box-skeleton .title .info .label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.App .list-box-container .list-box .title .info .value, .App .list-box-container .list-box-skeleton .title .info .value {
+  font-size: 13px;
+}
+
+.App .grid-box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 40px 20px;
+}
+
+.App .grid-box-container .grid-box, .App .grid-box-container .grid-box-skeleton {
+  position: relative;
+  max-height: 340px;
+  min-height: 340px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 100;
+      flex-shrink: 100;
+  max-width: calc(25% - (20px * 3/4));
+  width: calc(25% - (20px * 3/4));
+  min-width: calc(25% - (20px * 3/4));
+  background-color: #222831;
+  border-radius: 10px;
+  color: #F7F7F5;
+  -webkit-transition: -webkit-transform 100ms ease;
+  transition: -webkit-transform 100ms ease;
+  transition: transform 100ms ease;
+  transition: transform 100ms ease, -webkit-transform 100ms ease;
+}
+
+@media (max-width: 890px) {
+  .App .grid-box-container .grid-box, .App .grid-box-container .grid-box-skeleton {
+    max-width: calc(33.33% - (20px * 2/3));
+    width: calc(33.33% - (20px * 2/3));
+    min-width: calc(33.33% - (20px * 2/3));
+  }
+}
+
+@media (max-width: 480px) {
+  .App .grid-box-container .grid-box, .App .grid-box-container .grid-box-skeleton {
+    max-width: calc(50% - 10px);
+    width: calc(50% - 10px);
+    min-width: calc(50% - 10px);
+  }
+}
+
+.App .grid-box-container .grid-box:hover, .App .grid-box-container .grid-box-skeleton:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+}
+
+.App .grid-box-container .grid-box .info-list li, .App .grid-box-container .grid-box-skeleton .info-list li {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.App .grid-box-container .grid-box .rank, .App .grid-box-container .grid-box .eps, .App .grid-box-container .grid-box .movie, .App .grid-box-container .grid-box .parts, .App .grid-box-container .grid-box-skeleton .rank, .App .grid-box-container .grid-box-skeleton .eps, .App .grid-box-container .grid-box-skeleton .movie, .App .grid-box-container .grid-box-skeleton .parts {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: #FF4C29;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+}
+
+.App .grid-box-container .grid-box .eps, .App .grid-box-container .grid-box .movie, .App .grid-box-container .grid-box .parts, .App .grid-box-container .grid-box-skeleton .eps, .App .grid-box-container .grid-box-skeleton .movie, .App .grid-box-container .grid-box-skeleton .parts {
+  height: 40px;
+  width: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 12px;
+}
+
+.App .grid-box-container .grid-box .item-img, .App .grid-box-container .grid-box-skeleton .item-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 230px;
+  border-radius: 10px 10px 0 0;
+}
+
+.App .grid-box-container .grid-box .title, .App .grid-box-container .grid-box-skeleton .title {
+  padding: 10px;
+}
+
+.App .grid-box-container .grid-box .title > *, .App .grid-box-container .grid-box-skeleton .title > * {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.App .grid-box-container .grid-box .title > *:not(:first-child), .App .grid-box-container .grid-box-skeleton .title > *:not(:first-child) {
+  margin-top: 5px;
+}
+
+.App .grid-box-container .grid-box .title h2, .App .grid-box-container .grid-box-skeleton .title h2 {
+  font-size: 14px;
+}
+
+.App .grid-box-container .grid-box .title h2.skeleton-loading, .App .grid-box-container .grid-box-skeleton .title h2.skeleton-loading {
+  height: 18px;
+  width: 100%;
+}
+
+.App .grid-box-container .grid-box .title span, .App .grid-box-container .grid-box-skeleton .title span {
+  font-size: 12px;
+}
+
+.App .grid-box-container .grid-box .title span.skeleton-loading, .App .grid-box-container .grid-box-skeleton .title span.skeleton-loading {
+  height: 15px;
+  width: 50%;
+}
+
+.App .grid-box-container .grid-box .title i, .App .grid-box-container .grid-box-skeleton .title i {
+  font-size: 14px;
+}
+
+.App .grid-box-container .grid-box .title i.checked, .App .grid-box-container .grid-box-skeleton .title i.checked {
+  color: #ffd000;
+}
+
+.App .switch {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .switch .track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F7F7F5;
+  height: 15px;
+  width: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.App .switch .track.on .thumb {
+  margin-left: 10px;
+}
+
+.App .switch .track .thumb {
+  height: 20px;
+  width: 20px;
+  background-color: #FF4C29;
+  border-radius: 50%;
+  -webkit-transition: margin 200ms ease;
+  transition: margin 200ms ease;
+}
+
+.App button.load-more {
+  background-color: #FF4C29;
+  color: #F7F7F5;
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-weight: 600;
+  min-width: 100px;
+  margin: 30px auto;
+  display: block;
+  cursor: pointer;
+}
+
+.App button.load-more.end, .App button.load-more.disable {
+  cursor: not-allowed;
+}
+
+.App button.load-more.end {
+  opacity: 0.5;
+}
+
+.App button.load-more:hover {
+  background-color: #FF5C3C;
+}
+
+.App button.load-more:active {
+  background-color: #FF6B4E;
+}
+
+.App .skeleton-loading {
+  position: relative;
+}
+
+.App .skeleton-loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-animation: skeleton-loading 3s linear infinite forwards;
+          animation: skeleton-loading 3s linear infinite forwards;
+  background-color: #2E333C;
+}
+
+@-webkit-keyframes skeleton-loading {
+  0% {
+    background-color: #2E333C;
+  }
+  50% {
+    background-color: #282E37;
+  }
+  100% {
+    background-color: #2E333C;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #2E333C;
+  }
+  50% {
+    background-color: #282E37;
+  }
+  100% {
+    background-color: #2E333C;
+  }
+}
+
+.App .error {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px 0;
+}
+
+.App .error img {
+  width: 80vw;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+.App .error span {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.App .info-list li {
+  margin: 7px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+}
+
+.App .info-list li .label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.App .info-list li .value {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.App .wiggle {
+  -webkit-animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+
+.App .nav-bar {
+  height: 60px;
+  width: 100%;
+  background-color: #222831;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 3vh;
+  z-index: 1000;
+}
+
+.App .nav-bar .sub {
+  height: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .nav-bar .sub li {
+  list-style-type: none;
+}
+
+.App .nav-bar .sub .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .nav-bar .sub .left .logo {
+  height: 40px;
+  margin-right: 5px;
+}
+
+.App .nav-bar .sub .left .search-bar {
+  height: 40px;
+  width: 300px;
+  background-color: #F7F7F5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #222831;
+}
+
+.App .nav-bar .sub .left .search-bar .select {
+  height: 100%;
+}
+
+.App .nav-bar .sub .left .search-bar input {
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  color: #222831;
+}
+
+.App .nav-bar .sub .left .search-bar button {
+  height: 100%;
+  width: 60px;
+  background-color: #FF4C29;
+  color: #F7F7F5;
+  cursor: pointer;
+}
+
+.App .nav-bar .sub .left .search-bar button:hover {
+  background-color: #FF5C3C;
+}
+
+.App .nav-bar .sub .left .search-bar button:active {
+  background-color: #FF6B4E;
+}
+
+.App .nav-bar .sub .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .nav-bar .sub .right .hamburger {
+  padding: 10px;
+  border: 10px;
+  display: none;
+}
+
+.App .nav-bar .sub .right .hamburger:hover {
+  background-color: #282E37;
+}
+
+.App .nav-bar .sub .right .hamburger:active {
+  background-color: #2E333C;
+}
+
+.App .nav-bar .sub .right .hamburger .line {
+  height: 3px;
+  width: 20px;
+  background-color: #F7F7F5;
+  border: 10px;
+  margin: 3px 0;
+}
+
+.App .nav-bar .sub .right .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .nav-bar .sub .right .nav-links li {
+  position: relative;
+}
+
+.App .nav-bar .sub .right .nav-links li.open-menu .links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .nav-bar .sub .right .nav-links li a, .App .nav-bar .sub .right .nav-links li p {
+  display: inline-block;
+  padding: 5px;
+  color: rgba(247, 247, 245, 0.8);
+  -webkit-transition: color 100ms ease;
+  transition: color 100ms ease;
+  cursor: pointer;
+}
+
+.App .nav-bar .sub .right .nav-links li a:hover, .App .nav-bar .sub .right .nav-links li p:hover {
+  color: #F7F7F5;
+}
+
+@media (max-width: 750px) {
+  .App .nav-bar .sub .left {
+    width: 100%;
+  }
+  .App .nav-bar .sub .left .search-bar {
+    width: 100%;
+  }
+  .App .nav-bar .sub .right .hamburger {
+    display: block;
+  }
+  .App .nav-bar .sub .right .nav-links {
+    display: none;
+  }
+}
+
+.App .nav-links-small {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 60px);
+  padding: 20px 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  background-color: #222831;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+  z-index: 900;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 750px) {
+  .App .nav-links-small {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.App .nav-links-small.toggle {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.App .nav-links-small li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .nav-links-small a:hover {
+  color: #F7F7F5;
+}
+
+.App .nav-links-small li:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+.App .nav-links-small > li:nth-of-type(2), .App .nav-links-small > li:nth-of-type(3) {
+  margin: 20px 0;
+}
+
+.App .nav-links-small > li:nth-of-type(2) span, .App .nav-links-small > li:nth-of-type(3) span {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.App .home .carousel .content {
+  position: relative;
+}
+
+.App .home .carousel .content button {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #00000079;
+  width: 50px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.App .home .carousel .content button:hover {
+  background-color: #00000088;
+}
+
+.App .home .carousel .content button:active {
+  background-color: #00000098;
+}
+
+.App .home .carousel .content button i {
+  color: #F7F7F5;
+}
+
+.App .home .carousel .content button.prev {
+  left: 0;
+}
+
+.App .home .carousel .content button.prev i {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.App .home .carousel .content button.next {
+  right: 0;
+}
+
+.App .home .carousel .content button.next i {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.App .home .carousel .content .carousel-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  gap: 10px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 720px) {
+  .App .home .carousel .content .carousel-items {
+    max-width: calc(100vw - 6vw);
+  }
+}
+
+.App .home .carousel .content .carousel-items .item-skeleton {
+  background-color: #2E333C;
+  height: 200px;
+  min-width: 130px;
+  position: relative;
+}
+
+.App .home .carousel .content .carousel-items .item {
+  display: block;
+  height: 200px;
+  min-width: 130px;
+  position: relative;
+  color: #F7F7F5;
+  text-align: center;
+}
+
+.App .home .carousel .content .carousel-items .item .item-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.App .home .carousel .content .carousel-items .item .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), to(black));
+  background-image: linear-gradient(to bottom, transparent 60%, black 100%);
+}
+
+.App .home .carousel .content .carousel-items .item .cover .info {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #FF4C29;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.App .home .carousel .content .carousel-items .item .cover .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  width: calc(100% - 10px);
+  font-size: 14px;
+}
+
+.App .side-panel .top-panel li.on-here a {
+  color: #FF4C29 !important;
+  font-weight: 700;
+}
+
+.App .top .top-panel {
+  text-align: center;
+  overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  max-width: calc(100vw - 6vw);
+}
+
+.App .top .top-panel .title {
+  display: none;
+}
+
+.App .top .top-panel li {
+  display: inline-block;
+  min-width: 90px;
+  margin-right: 5px;
+}
+
+.App .top .top-panel li.on-here a {
+  background-color: #FF4C29;
+}
+
+.App .top .top-panel li:last-of-type {
+  margin-right: 0;
+}
+
+.App .top .top-panel li a {
+  display: block;
+  background-color: #222831;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+@media (max-width: 720px) {
+  .App .search-filter-panel {
+    max-height: 58.6px;
+    -webkit-transition: max-height 100ms ease;
+    transition: max-height 100ms ease;
+  }
+  .App .search-filter-panel:not(.open) {
+    overflow: hidden;
+  }
+  .App .search-filter-panel.open {
+    max-height: 1000px;
+  }
+  .App .search-filter-panel .title {
+    background-color: #FF4C29;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  .App .search-filter-panel li {
+    list-style-type: none;
+  }
+  .App .search-filter-panel button {
+    margin: 20px 0;
+  }
+  .App .search-filter-panel .select-menu {
+    margin-top: 10px;
+  }
+}
+
+.App .search-filter-panel .select-menu .value {
+  background-color: transparent;
+  border: 2px solid #F7F7F5;
+  border-radius: 5px;
+  color: #F7F7F5;
+}
+
+.App .search-filter-panel button {
+  height: 30px;
+  width: 100%;
+  background-color: #FF4C29;
+  color: #F7F7F5;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.App .search-filter-panel button:hover {
+  background-color: #FF5C3C;
+}
+
+.App .search-filter-panel button:active {
+  background-color: #FF6B4E;
+}
+
+.App .advanced-search .content {
+  margin: 0 0 20px 0;
+}
+
+@media (min-width: 525px) {
+  .App .advanced-search .content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 190px auto;
+        grid-template-columns: 190px auto;
+    -ms-grid-rows: 60px auto 100px;
+        grid-template-rows: 60px auto 100px;
+  }
+}
+
+@media (max-width: 525px) {
+  .App .advanced-search .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App .advanced-search .content .select-menu {
+    width: 100% !important;
+  }
+  .App .advanced-search .content .switch {
+    width: 100%;
+  }
+  .App .advanced-search .content .checkboxes {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  .App .advanced-search .content button {
+    padding: 7px 0;
+  }
+}
+
+.App .advanced-search .content .advanced-search-bar {
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #F7F7F5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+.App .advanced-search .content .advanced-search-bar input[type=text] {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: #F7F7F5;
+}
+
+.App .advanced-search .content .left {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 2;
+  grid-row: 2 / 2;
+  width: 100%;
+}
+
+.App .advanced-search .content .left .select-menu {
+  width: 150px;
+  margin-top: 20px;
+}
+
+.App .advanced-search .content .right {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 2;
+  grid-row: 2 / 2;
+  margin-top: 20px;
+}
+
+.App .advanced-search .content .right .switch {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.App .advanced-search .content .right .switch .track {
+  background-color: #F7F7F5;
+  height: 15px;
+  width: 30px;
+  margin: 0 10px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.App .advanced-search .content .right .switch .track.on .thumb {
+  margin-left: 10px;
+}
+
+.App .advanced-search .content .right .switch .track:hover {
+  background-color: #F1F1F1;
+}
+
+.App .advanced-search .content .right .switch .track:active {
+  background-color: #EDEDED;
+}
+
+.App .advanced-search .content .right .switch .track .thumb {
+  background-color: #FF4C29;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  -webkit-transition: margin 100ms ease;
+  transition: margin 100ms ease;
+}
+
+.App .advanced-search .content .right .checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.App .advanced-search .content .right .checkboxes .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.App .advanced-search .content .right .checkboxes .checkbox.checked .box {
+  background-color: #2196F3;
+}
+
+.App .advanced-search .content .right .checkboxes .checkbox .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15px;
+  width: 15px;
+  background-color: #F7F7F5;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.App .advanced-search .content .right .checkboxes .checkbox .box .checkmark {
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.App .advanced-search .content button {
+  margin: 40px 0 20px 0;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-row: 3;
+  grid-row: 3 / 3;
+  border-radius: 10px;
+  background-color: #FF4C29;
+  color: #F7F7F5;
+  cursor: pointer;
+  width: 100%;
+}
+
+.App .advanced-search .content button:hover {
+  background-color: #FF5C3C;
+}
+
+.App .advanced-search .content button:active {
+  background-color: #FF6B4E;
+}
+
+.App .genre {
+  margin-bottom: 20px;
+}
+
+.App .genre .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.App .genre .links li {
+  width: 110px;
+  list-style-type: none;
+}
+
+.App .genre .links li.on-here a {
+  color: #FF4C29 !important;
+  font-weight: 700;
+}
+
+.App .season-panel-search .select-menu .value, .App .season-panel-search input[type=number] {
+  background-color: transparent;
+  border: 2px solid #F7F7F5;
+  border-radius: 5px;
+  color: #F7F7F5;
+}
+
+.App .season-panel-search input[type=number] {
+  height: 35px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.App .season-panel-search input[type=number]::-webkit-input-placeholder {
+  color: #F7F7F5;
+}
+
+.App .season-panel-search input[type=number]:-ms-input-placeholder {
+  color: #F7F7F5;
+}
+
+.App .season-panel-search input[type=number]::-ms-input-placeholder {
+  color: #F7F7F5;
+}
+
+.App .season-panel-search input[type=number]::placeholder {
+  color: #F7F7F5;
+}
+
+.App .season-panel-search button {
+  height: 30px;
+  width: 100%;
+  background-color: #FF4C29;
+  color: #F7F7F5;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.App .season-panel-search button:hover {
+  background-color: #FF5C3C;
+}
+
+.App .season-panel-search button:active {
+  background-color: #FF6B4E;
+}
+
+.App .season-panel-nav li.on-here a {
+  color: #FF4C29 !important;
+  font-weight: 700;
+}
+
+.App .season .season-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.App .season .season-panel ul {
+  width: 100%;
+}
+
+.App .season .season-panel .season-panel-search .title {
+  background-color: #FF4C29;
+  padding: 7px 10px;
+  margin-bottom: 20px;
+}
+
+.App .season .season-panel .season-panel-search input[type=number] {
+  margin: 5px 0;
+}
+
+.App .season .season-panel .season-panel-search button {
+  margin-bottom: 20px;
+}
+
+.App .season .season-panel .season-panel-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #222831;
+  text-align: center;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  max-width: calc(100vw - 6vw);
+}
+
+.App .season .season-panel .season-panel-nav .title {
+  display: none;
+}
+
+.App .season .season-panel .season-panel-nav a {
+  display: block;
+  padding: 10px 0;
+  width: 70px;
+  border-radius: 5px;
+}
+
+.App .season {
+  margin-bottom: 20px;
+}
+
+.App .season table {
+  width: 100%;
+  text-align: center;
+}
+
+.App .season table + .throbber-container {
+  margin-top: 20px;
+}
+
+.App .season table tr:first-of-type td {
+  background-color: #222831;
+  padding: 10px 10px;
+}
+
+.App .season table tr:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .season table tr td {
+  padding: 15px 10px;
+}
+
+.App .anime-manga-nav {
+  width: 100%;
+}
+
+.App .anime-manga-nav img {
+  margin: 0 auto 20px auto;
+}
+
+.App .anime-manga-nav ul {
+  background-color: #222831;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: auto;
+  height: 50px;
+}
+
+.App .anime-manga-nav ul li {
+  display: inline;
+  white-space: nowrap;
+  margin: 0 5px;
+}
+
+.App .anime-manga-nav ul li a {
+  padding: 5px 10px;
+}
+
+.App .anime-manga .img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.App .anime-manga .throbber-container {
+  margin-top: 50px;
+}
+
+.App .anime-manga.home, .App .anime-manga.characters_staff, .App .anime-manga.news, .App .anime-manga.pictures, .App .anime-manga.videos, .App .anime-manga.stats, .App .anime-manga.recommendations {
+  margin-bottom: 20px;
+}
+
+.App .anime-manga.characters_staff .heading-title, .App .anime-manga.episodes .heading-title, .App .anime-manga.pictures .heading-title, .App .anime-manga.videos .heading-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .anime-manga.characters_staff .heading-title .switch .thumb, .App .anime-manga.episodes .heading-title .switch .thumb, .App .anime-manga.pictures .heading-title .switch .thumb, .App .anime-manga.videos .heading-title .switch .thumb {
+  background-color: #343941;
+}
+
+.App .anime-manga.home .rank-box {
+  border: 2px dashed #F7F7F5;
+  padding: 10% 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.App .anime-manga.home .rank-box .info .rank {
+  font-size: 30px;
+}
+
+.App .anime-manga.home .general .heading {
+  margin-top: 20px;
+}
+
+.App .anime-manga.home .general p {
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+.App .anime-manga.home .general iframe {
+  width: 100%;
+  max-width: 320px;
+}
+
+.App .anime-manga.home .general ul {
+  margin-top: 20px;
+}
+
+.App .anime-manga.home .themes li:not(:first-of-type) {
+  margin-bottom: 10px;
+}
+
+.App .anime-manga.characters_staff .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .anime-manga.characters_staff .heading .switch .thumb {
+  background-color: #343941;
+}
+
+.App .anime-manga.characters_staff .character {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+}
+
+.App .anime-manga.characters_staff .character:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .anime-manga.characters_staff .character span {
+  display: block;
+}
+
+.App .anime-manga.characters_staff .character span:not(:first-of-type) {
+  margin-top: 5px;
+}
+
+.App .anime-manga.characters_staff .character .img {
+  width: 60px;
+  height: 90px;
+}
+
+.App .anime-manga.characters_staff .character .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.App .anime-manga.characters_staff .character .item .img {
+  margin-right: 10px;
+}
+
+.App .anime-manga.characters_staff .character .item div a {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.characters_staff .character .item div > * {
+  display: block;
+}
+
+.App .anime-manga.characters_staff .character .va {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  text-align: right;
+}
+
+.App .anime-manga.characters_staff .character .va:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+.App .anime-manga.characters_staff .character .va .img {
+  margin-left: 10px;
+}
+
+.App .anime-manga.characters_staff .character .va div a {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.characters_staff .character .va div > * {
+  display: block;
+}
+
+.App .anime-manga.characters_staff .staff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+}
+
+.App .anime-manga.characters_staff .staff:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .anime-manga.characters_staff .staff .img {
+  width: 70px;
+  height: 110px;
+  margin-right: 10px;
+}
+
+.App .anime-manga.characters_staff .staff div a {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.characters_staff .staff div > * {
+  display: block;
+}
+
+.App .anime-manga.episodes .episode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 50px;
+  padding: 10px;
+}
+
+.App .anime-manga.episodes .episode:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .anime-manga.episodes .episode .id {
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.App .anime-manga.episodes .episode .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.App .anime-manga.episodes .episode .left .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .anime-manga.episodes .episode .left .title span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.App .anime-manga.episodes .episode .left .title i {
+  margin-right: 10px;
+}
+
+.App .anime-manga.news .img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 120px;
+  min-width: 80px;
+  margin-right: 10px;
+}
+
+.App .anime-manga.news .article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+}
+
+.App .anime-manga.news .article:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .anime-manga.news .article .top {
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.news .article .top a {
+  margin-right: 10px;
+}
+
+.App .anime-manga.news .article .middle p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.news .article .bottom a {
+  margin-right: 5px;
+}
+
+.App .anime-manga.pictures .large, .App .anime-manga.pictures .small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 40px 20px;
+}
+
+.App .anime-manga.pictures .large img {
+  width: calc(33.33% - (20px * 2/3));
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+  cursor: pointer;
+}
+
+.App .anime-manga.pictures .large img:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+}
+
+@media (max-width: 890px) {
+  .App .anime-manga.pictures .large img {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .App .anime-manga.pictures .large img {
+    width: 100%;
+  }
+}
+
+.App .anime-manga.pictures .small img {
+  width: calc(25% - (20px * 3/4));
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+  cursor: pointer;
+}
+
+.App .anime-manga.pictures .small img:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+}
+
+@media (max-width: 890px) {
+  .App .anime-manga.pictures .small img {
+    width: calc(33.33% - (20px * 2/3));
+  }
+}
+
+@media (max-width: 480px) {
+  .App .anime-manga.pictures .small img {
+    width: calc(50% - 10px);
+  }
+}
+
+.App .anime-manga.videos .videos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 40px 20px;
+}
+
+.App .anime-manga.videos .videos .video {
+  width: 190px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 100;
+      flex-shrink: 100;
+  -ms-flex-preferred-size: calc(25% - (20px * 3/4));
+      flex-basis: calc(25% - (20px * 3/4));
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.App .anime-manga.videos .videos .video:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+}
+
+@media (max-width: 900px) {
+  .App .anime-manga.videos .videos .video {
+    -ms-flex-preferred-size: calc(33.33% - (20px * 2/3));
+        flex-basis: calc(33.33% - (20px * 2/3));
+  }
+}
+
+@media (max-width: 550px) {
+  .App .anime-manga.videos .videos .video {
+    -ms-flex-preferred-size: calc(50% - 10px);
+        flex-basis: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 340px) {
+  .App .anime-manga.videos .videos .video {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.App .anime-manga.videos .videos .video .img {
+  height: 120px;
+  width: 100%;
+}
+
+.App .anime-manga.videos .videos .video .title {
+  height: 57.33px;
+  width: 100%;
+  background-color: #F7F7F5;
+  color: #222831;
+  padding: 10px;
+}
+
+.App .anime-manga.videos .videos .video .title span {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.App .anime-manga.stats .bar-chart {
+  margin-bottom: 20px;
+}
+
+.App .anime-manga.stats .bar-chart li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .anime-manga.stats .bar-chart li:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+.App .anime-manga.stats .bar-chart li .score {
+  width: 30px;
+}
+
+.App .anime-manga.stats .bar-chart li .bar-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.App .anime-manga.stats .bar-chart li .bar-container .bar {
+  background-color: #FF4C29;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.App .anime-manga.recommendations .img {
+  height: 120px;
+  min-width: 80px;
+  margin-right: 10px;
+}
+
+.App .anime-manga.recommendations .recommendation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+}
+
+.App .anime-manga.recommendations .recommendation:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .anime-manga.recommendations .recommendation .right {
+  width: 100%;
+}
+
+.App .anime-manga.recommendations .recommendation .right .top {
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.recommendations .recommendation .right .top a {
+  font-size: 18px;
+}
+
+.App .anime-manga.recommendations .recommendation .right .bottom a {
+  margin-left: 5px;
+}
+
+.App .anime-manga.reviews .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+}
+
+.App .anime-manga.reviews .review:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .anime-manga.reviews .review .img {
+  width: 80px;
+  height: 120px;
+  margin-right: 10px;
+}
+
+.App .anime-manga.reviews .review button {
+  background-color: transparent;
+  color: rgba(247, 247, 245, 0.8);
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+
+.App .anime-manga.reviews .review button:hover {
+  color: #F7F7F5;
+}
+
+.App .anime-manga.reviews .review .right {
+  width: 100%;
+}
+
+.App .anime-manga.reviews .review .right .top {
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.reviews .review .right .top .date {
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+.App .anime-manga.reviews .review .right .top a {
+  font-weight: 700;
+}
+
+.App .anime-manga.reviews .review .right .content {
+  margin-bottom: 5px;
+}
+
+.App .anime-manga.reviews .review .right .content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.App .anime-manga.reviews .review .right .content a {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.App .anime-manga.reviews .review .right .bottom {
+  font-size: 14px;
+}
+
+.App .anime-manga.reviews .review .right .bottom .thumb {
+  margin: 0 10px;
+}
+
+.App .anime-manga.reviews .review .right .bottom .thumb i {
+  font-size: 12px;
+  margin-right: 3px;
+}
+
+.App .anime-manga.reviews .review .right table {
+  margin-top: 5px;
+  display: none;
+  font-size: 15px;
+}
+
+.App .anime-manga.reviews .review .right table.show {
+  display: block;
+}
+
+.App .anime-manga.reviews .review .right table td {
+  padding: 3px 5px;
+}
+
+.App .anime-manga.reviews .review .right table td:first-of-type {
+  width: 80px;
+}
+
+.App .anime-manga.reviews .review .right table td:last-of-type {
+  text-align: center;
+}
+
+.App .anime-manga.reviews .review .right table .table-heading {
+  background-color: #FF4C29;
+}
+
+.App .anime-manga-side-panel .img {
+  position: relative;
+}
+
+.App .anime-manga-side-panel .img:hover .score {
+  opacity: 0;
+}
+
+.App .anime-manga-side-panel .img .score {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.App .anime-manga-side-panel .img .score .circle {
+  position: relative;
+  height: 70px;
+  width: 70px;
+}
+
+.App .anime-manga-side-panel .img .score .circle svg circle {
+  stroke: #FF4C29;
+  fill: transparent;
+  -webkit-transition: stroke-dashoffset 0.35s;
+  transition: stroke-dashoffset 0.35s;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.App .anime-manga-side-panel .img .score .circle span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 14px;
+  width: 24px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.App .anime-manga-side-panel .img .score .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .anime-manga-side-panel .img .score .info i {
+  font-size: 17px;
+}
+
+.App .anime-manga-side-panel .img .score .info i.checked {
+  color: #ffd000;
+}
+
+.App .side-panel .schedule-panel li.on-here a {
+  color: #FF4C29 !important;
+  font-weight: 700;
+}
+
+.App .schedule {
+  margin-bottom: 20px;
+}
+
+.App .schedule .schedule-panel {
+  text-align: center;
+  overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  max-width: calc(100vw - 6vw);
+}
+
+.App .schedule .schedule-panel .title {
+  display: none;
+}
+
+.App .schedule .schedule-panel li {
+  display: inline-block;
+  min-width: 90px;
+  margin-right: 5px;
+}
+
+.App .schedule .schedule-panel li.on-here a {
+  background-color: #FF4C29;
+}
+
+.App .schedule .schedule-panel li:last-of-type {
+  margin-right: 0;
+}
+
+.App .schedule .schedule-panel li a {
+  display: block;
+  background-color: #222831;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  text-decoration: none !important;
+}
+
+.App .character-person {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.App .character-person.home-page {
+  width: 100%;
+}
+
+.App .character-person.home-page .top-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media (max-width: 550px) {
+  .App .character-person.home-page .top-part {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App .character-person.home-page .top-part .images-link {
+    margin: 0 0 20px 0 !important;
+  }
+}
+
+.App .character-person.home-page .top-part .images-link {
+  margin-right: 20px;
+}
+
+.App .character-person.home-page .top-part .images-link img {
+  width: 200px;
+}
+
+.App .character-person.home-page .top-part .images-link span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.App .character-person.home-page .top-part p {
+  white-space: pre-line;
+}
+
+.App .character-person.home-page .top-part .info-list {
+  margin-top: 10px;
+}
+
+.App .character-person.home-page > .item:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .character-person.home-page .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px;
+}
+
+.App .character-person.home-page .item .img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 60px;
+  height: 90px;
+  margin-right: 10px;
+}
+
+.App .character-person.home-page .item div a {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.App .character-person.home-page .item div > * {
+  display: block;
+}
+
+.App .character-person.home-page .item-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.App .character-person.home-page .item-2:nth-of-type(odd) {
+  background-color: #373C44;
+}
+
+.App .character-person.home-page .item-2 .item {
+  width: 50%;
+}
+
+@media (max-width: 500px) {
+  .App .character-person.home-page .item-2 .img {
+    margin: 0 0 10px 0 !important;
+  }
+  .App .character-person.home-page .item-2 .item:first-of-type {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App .character-person.home-page .item-2 .item:last-of-type {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.App .character-person.home-page .item-2 .item:last-of-type {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
+}
+
+.App .character-person.home-page .item-2 .item:last-of-type .img {
+  margin: 0 0 0 10px;
+}
+
+.App .character-person.pictures .back {
+  background-color: #FF4C29;
+  padding: 10px 15px;
+  margin-top: 50px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.App .character-person.pictures .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 40px 20px;
+}
+
+.App .character-person.pictures .images img {
+  width: calc(20% - (20px * 4/5));
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+  cursor: pointer;
+}
+
+.App .character-person.pictures .images img:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+}
+
+@media (max-width: 890px) {
+  .App .character-person.pictures .images img {
+    width: calc(25% - (20px * 3/4));
+  }
+}
+
+@media (max-width: 700px) {
+  .App .character-person.pictures .images img {
+    width: calc(33.33% - (20px * 2/3));
+  }
+}
+
+@media (max-width: 500px) {
+  .App .character-person.pictures .images img {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 300px) {
+  .App .character-person.pictures .images img {
+    width: 100%;
+  }
+}
+
+.App .side-panel {
+  min-width: 220px;
+  max-width: 220px;
+  margin: 50px 0 20px 20px;
+}
+
+.App .side-panel img {
+  width: 100%;
+}
+
+@media (max-width: 720px) {
+  .App .side-panel {
+    max-width: none;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
+
+.App .side-panel ul:not(:first-of-type) .title {
+  margin-top: 30px;
+}
+
+.App .side-panel ul .title {
+  background-color: #FF4C29;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.App .side-panel ul .title a {
+  color: #F7F7F5;
+}
+
+.App .side-panel ul li:not(.title) {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.App footer {
+  background-color: #222831;
+  padding: 20px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.App footer p button {
+  background-color: transparent;
+  color: #FF4C29;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.App footer .form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: none;
+  opacity: 0;
+  place-items: center;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  overflow-y: auto;
+  min-height: 440px;
+}
+
+.App footer .form-container form {
+  background-color: #222831;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.05);
+          box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  height: 400px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.App footer .form-container form section {
+  position: relative;
+  width: 100%;
+}
+
+.App footer .form-container form section.focus .label {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #222831;
+  padding: 0 5px;
+  top: -8px;
+}
+
+.App footer .form-container form section.focus input, .App footer .form-container form section.focus textarea {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.App footer .form-container form .input-section {
+  height: 45px;
+}
+
+.App footer .form-container form .input-section input {
+  height: 40px;
+  padding: 0 10px;
+}
+
+.App footer .form-container form .textarea-section {
+  height: 100%;
+}
+
+.App footer .form-container form .textarea-section textarea {
+  height: 100%;
+  padding: 10px;
+  resize: none;
+}
+
+.App footer .form-container form input, .App footer .form-container form textarea {
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #F7F7F5;
+  width: 100%;
+  -webkit-transition: border 100ms ease;
+  transition: border 100ms ease;
+  color: #F7F7F5;
+}
+
+.App footer .form-container form .label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #F7F7F5;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+
+.App footer .form-container form .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.App footer .form-container form .btns button {
+  width: 100%;
+  height: 35px;
+  color: #F7F7F5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App footer .form-container form .btns button[type=button] {
+  background-color: transparent;
+  border: 2px solid #F7F7F5;
+}
+
+.App footer .form-container form .btns button[type=button]:hover {
+  background-color: #F7F7F5;
+  color: #222831;
+}
+
+.App footer .form-container form .btns button[type=button]:active {
+  background-color: #F1F1F1;
+}
+
+.App footer .form-container form .btns button[type=submit] {
+  background-color: #FF4C29;
+}
+
+.App footer .form-container form .btns button[type=submit]:hover {
+  background-color: #FF5C3C;
+}
+
+.App footer .form-container form .btns button[type=submit]:active {
+  background-color: #FF6B4E;
+}
+
+.App footer .bottom {
+  margin-top: 10px;
+}
+
+.App footer .bottom li {
+  display: inline-block;
+}
+
+.App footer .bottom span {
+  border: 0.5px solid #F7F7F5;
+}
+
+.App footer .bottom a {
+  display: inline-block;
+  width: 100px;
+  padding: 5px 10px;
+}
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,21 @@
+.genre {
+	margin-bottom: 20px;
+
+	.links {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		gap: 10px 20px;
+
+		li {
+			width: 110px;
+			list-style-type: none;
+			
+			&.on-here a {
+				color: $primary !important;
+				font-weight: 700;
+			}
+		}
+	}
+}

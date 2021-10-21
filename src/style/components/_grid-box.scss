@@ -1,0 +1,112 @@
+.grid-box-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  
+  .grid-box, .grid-box-skeleton {
+    position: relative;
+    max-height: 340px;
+    min-height: 340px;
+    flex-grow: 0;
+    flex-shrink: 100;
+    max-width: calc(25% - (20px * 3/4));
+    width: calc(25% - (20px * 3/4));
+    min-width: calc(25% - (20px * 3/4));
+    background-color: $dark-bg;
+    border-radius: 10px;
+    color: $secondary;
+    transition: transform 100ms ease;
+
+    @media (max-width: 890px) {
+      max-width: calc(33.33% - (20px * 2/3));
+      width: calc(33.33% - (20px * 2/3));
+      min-width: calc(33.33% - (20px * 2/3));
+    }
+
+    @media (max-width: 480px) {
+      max-width: calc(50% - 10px);
+      width: calc(50% - 10px);
+      min-width: calc(50% - 10px);
+    }
+  
+    &:hover {
+      transform: scale(1.05, 1.05);
+    }
+
+    .info-list {
+      
+      li {
+        @include line-clamp;
+        margin: 0;
+      }
+    }
+  
+    .rank, .eps, .movie, .parts {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background-color: $primary;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+    }
+  
+    .eps, .movie, .parts {
+      height: 40px;
+      width: 40px;
+      flex-direction: column;
+      font-size: 12px;
+    }
+  
+    .item-img {
+      @include bg-img;
+      width: 100%;
+      height: 230px;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .title {
+      padding: 10px;
+  
+      > * {
+        @include line-clamp(2);
+  
+        &:not(:first-child) {
+          margin-top: 5px;
+        }
+      }
+  
+      h2 {
+        font-size: 14px;
+  
+        &.skeleton-loading {
+          height: 18px;
+          width: 100%;
+        }
+      }
+  
+      span {
+        font-size: 12px;
+  
+        &.skeleton-loading {
+          height: 15px;
+          width: 50%;
+        }
+      }
+  
+      i {
+        font-size: 14px;
+  
+        &.checked {
+          color: $star;
+        }
+      }
+    }
+  }
+}

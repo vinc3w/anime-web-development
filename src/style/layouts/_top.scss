@@ -1,0 +1,43 @@
+.side-panel .top-panel li.on-here a {
+	color: $primary !important;
+	font-weight: 700;
+}
+
+.top {
+
+	.top-panel {
+		text-align: center;
+		overflow-x: auto;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 30px;
+		max-width: calc(100vw - 6vw);
+
+		.title {
+			display: none;
+		}
+
+		li {
+			display: inline-block;
+			min-width: 90px;
+			margin-right: 5px;
+
+			&.on-here a {
+				background-color: $primary;
+			}
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			a {
+				display: block;
+				background-color: $dark-bg;
+				padding: 10px 0;
+				width: 100%;
+				border-radius: 5px;
+			}
+		}
+	}
+}

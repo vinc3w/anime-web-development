@@ -1,0 +1,26 @@
+.skeleton-loading {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		animation: skeleton-loading 3s linear infinite forwards;
+		background-color: $dark-bg-3;
+	}
+
+	@keyframes skeleton-loading {
+		0% {
+			background-color: $dark-bg-3;
+		}
+		50% {
+			background-color: $dark-bg-2;
+		}
+		100% {
+			background-color: $dark-bg-3;
+		}
+	}
+}

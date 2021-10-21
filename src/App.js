@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Switch, Route } from "react-router-dom";
+import { Home, Top, Search, AdvancedSearch, Season, Schedule, Genre, Producer, AnimeManga, CharacterPerson, Nav, SidePanel, Footer } from "./Layout/index";
+import "./style/app.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App() { // rmeove page side panel add on on url change
+
+	const [sidePanelAddOn, setSidePanelAddOn] = useState(null);
+
+	return (
+		<div className="App">
+			<Nav />
+			<main>
+				<div className="sub">
+					<Switch>
+						<Route exact path={["/", "/home"]}>
+							<Home />
+							<SidePanel />
+						</Route>
+						<Route exact path={["/top/:type", "/top/:type/:subtype"]}>
+							<Top setSidePanelAddOn={setSidePanelAddOn} />
+							<SidePanel>{ sidePanelAddOn }</SidePanel>
+						</Route>
+						<Route exact path="/search/:type" component={Search}>
+							<Search setSidePanelAddOn={setSidePanelAddOn} />
+							<SidePanel>{ sidePanelAddOn }</SidePanel>
+						</Route>
+						<Route path="/advanced-search" component={AdvancedSearch}>
+							<AdvancedSearch/>
+							<SidePanel />
+						</Route>
+						<Route exact path={["/genre/:type", "/genre/:type/:id"]} component={Genre}>
+							<Genre/>
+							<SidePanel />
+						</Route>
+						<Route path="/season">
+							<Season setSidePanelAddOn={setSidePanelAddOn} />
+							<SidePanel>{ sidePanelAddOn }</SidePanel>
+						</Route>
+						<Route exact path={["/schedule", "/schedule/:day"]}>
+							<Schedule setSidePanelAddOn={setSidePanelAddOn} />
+							<SidePanel>{ sidePanelAddOn }</SidePanel>
+						</Route>
+						<Route path="/:type(producer|magazine)/:id">
+							<Producer setSidePanelAddOn={setSidePanelAddOn} />
+							<SidePanel />
+						</Route>
+						<Route
+							exact
+							path={["/:type(anime|manga)/:id", "/:type(anime|manga)/:id/:subtype"]}
+							component={AnimeManga}
+						/>
+						<Route
+							exact
+							path={["/:type(character|person)/:id", "/:type(character|person)/:id/:subtype"]}
+							component={CharacterPerson}
+						/>
+					</Switch>
+				</div>
+			</main>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;

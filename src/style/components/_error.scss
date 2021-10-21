@@ -1,0 +1,19 @@
+.error {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 20px 0;
+
+	img {
+		width: 80vw;
+		max-width: 300px;
+		margin-bottom: 30px;
+	}
+
+	span {
+		font-size: 30px;
+		font-weight: 700;
+	}
+}

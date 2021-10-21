@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+	height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $light-bg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #54575c;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #616469;
+}
+
+img {
+	display: block;
+}
+
+input, button, textarea {
+	border: none;
+	outline: none;
+}
+
+.cover-content {
+	position: relative;
+
+	.cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $link;
+	transition: color 100ms ease;
+
+	&:hover {
+		color: $secondary;
+	}
+}
+
+li {
+	list-style-type: none;
+}
+
+.App {
+	min-height: 100vh;
+	background-color: $light-bg;
+	font-family: "Opens Sans", sans-serif;
+	color: $secondary;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+
+	main {
+		padding: 60px 3vw 0 3vw;
+		width: 100%;
+		
+		.sub {
+			max-width: 1100px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+  
+			.heading, .heading-title {
+				background-color: $primary;
+				margin: 20px 0;
+				padding: 10px;
+				width: 100%;
+				
+				span {
+					font-size: 20px;
+					font-weight: 700;
+				}
+			}
+
+			.heading-title {
+				margin-top: 50px;
+			}
+
+			.home, .top, .advanced-search, .search, .genre, .anime-manga, .season, .schedule, .producer {
+				width: calc(100% - 240px);
+			}
+
+			@media (max-width: 720px) {
+				flex-direction: column;
+
+				.home, .top, .advanced-search, .search, .genre, .anime-manga, .season, .schedule, .produce {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	// components
+
+	@import "./components/select-menu";
+	@import "./components/select-link-menu";
+	@import "./components/throbber";
+	@import "./components/list-box";
+	@import "./components/grid-box";
+	@import "./components/switch";
+	@import "./components/load-more-btn";
+	@import "./components/skeleton-loading";
+	@import "./components/error";
+	@import "./components/info-list";
+	@import "./components/wiggle";
+
+	// layouts
+
+	@import "./layouts/nav";
+	@import "./layouts/home";
+	@import "./layouts/top";
+	@import "./layouts/search";
+	@import "./layouts/advanced-search";
+	@import "./layouts/genre";
+	@import "./layouts/season";
+	@import "./layouts/anime-manga";
+	@import "./layouts/schedule";
+	@import "./layouts/character-person";
+	@import "./layouts/side-panel";
+	@import "./layouts/footer";
+}

@@ -1,0 +1,112 @@
+.home {
+
+	.carousel {
+	
+		.content {
+			position: relative;
+		
+			button {
+				position: absolute;
+				top: 0;
+				height: 100%;
+				background-color: #00000079;
+				width: 50px;
+				cursor: pointer;
+				z-index: 100;
+		
+				&:hover {
+					background-color: #00000088;
+				}
+		
+				&:active {
+					background-color: #00000098;
+				}
+		
+				i {
+					color: $secondary;
+				}
+		
+				&.prev {
+					left: 0;
+		
+					i {
+						transform: rotate(90deg);
+					}
+				}
+		
+				&.next {
+					right: 0;
+		
+					i {
+						transform: rotate(-90deg);
+					}
+				}
+			}
+			
+			.carousel-items {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				position: relative;
+				gap: 10px;
+				overflow: auto;
+				scroll-behavior: smooth;
+	
+				@media (max-width: 720px) {
+					max-width: calc(100vw - 6vw);
+				}
+	
+				.item-skeleton {
+					background-color: $dark-bg-3;
+					height: 200px;
+					min-width: 130px;
+					position: relative;
+				}
+			
+				.item {
+					display: block;
+					height: 200px;
+					min-width: 130px;
+					position: relative;
+					color: $secondary;
+					text-align: center;
+			
+					.item-img {
+						@include bg-img;
+						height: 100%;
+						width: 100%;
+					}
+			
+					.cover {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-image: linear-gradient(
+							to bottom, transparent 60%, black 100%
+						);
+			
+						.info {
+							position: absolute;
+							top: 5px;
+							right: 5px;
+							background-color: $primary;
+							padding: 3px 5px;
+							border-radius: 3px;
+						}
+			
+						.title {
+							@include line-clamp(3);
+							position: absolute;
+							left: 5px;
+							bottom: 5px;
+							width: calc(100% - 10px);
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
