@@ -49,6 +49,7 @@ function List() {
 
 		data && fetchData()
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [page])
 	
 	useEffect(() => {
@@ -57,6 +58,7 @@ function List() {
 
 		return () => isUnmounted.current = true;
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location])
 
 	return (

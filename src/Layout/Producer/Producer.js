@@ -53,6 +53,7 @@ function Producer() {
     if (page === 1) setData(null);
     fetchData();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
 	
 	useEffect(() => {
@@ -65,6 +66,7 @@ function Producer() {
 
     return () => isUnmounted.current = true;
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [type, id])
 
   useEffect(() => {

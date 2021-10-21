@@ -81,6 +81,7 @@ function Schedule({ setSidePanelAddOn }) {  // small screen size panel
 
 		setSidePanelAddOn(showSchedulePanel && <SchedulePanel day={day} />);
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [showSchedulePanel, day])
 
 	useEffect(() => {

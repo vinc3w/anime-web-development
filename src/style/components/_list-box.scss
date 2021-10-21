@@ -50,24 +50,29 @@
 				}
 			}
 		
-			.info {
+			.info-list li {
 				display: flex;
 				justify-content: flex-start;
 				align-items: center;
 				margin-top: 5px;
+
+				&.score {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+				}
 	
 				&.skeleton-loading {
 					height: 15px;
 					width: 120px;
 				}
-	
-				.label {
-					font-size: 11px;
-					color: rgba(255, 255, 255, 0.5);
-				}
-			
-				.value {
-					font-size: 13px;
+
+				i {
+					font-size: 15px;
+
+					&.checked {
+						color: $star;
+					}
 				}
 			}
 		}

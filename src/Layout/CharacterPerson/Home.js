@@ -9,7 +9,7 @@ function Va({ data }) {
 		</div>
 		{
 			data.length ? data.map((item, index) => (
-				<div className="va">
+				<div className="va" key={index}>
 					<div className="item" key={index}>
 						<Link to={`/person/${item.mal_id}`}>
 							<div className="img" style={{backgroundImage: `url("${item.image_url}")`}}></div>
@@ -184,7 +184,7 @@ function Home({ type, data }) {
 						<li>
 							<span className="label">WEBSITE:</span>
 							<span className="value">
-								<a target="_blank" rel="noreferrer" to={data.website_url}>Click here</a>
+								<a target="_blank" rel="noreferrer" href={data.website_url}>Click here</a>
 							</span>
 						</li>
 						</>

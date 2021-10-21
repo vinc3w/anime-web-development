@@ -108,6 +108,7 @@ function Reviews({ title }) {
 
 		return () => isUnmounted.current = true;
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [type, id, page])
 	
 	return (

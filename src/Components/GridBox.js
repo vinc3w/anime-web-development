@@ -23,7 +23,7 @@ function GridBox({ item, typeOfItem }) {
 		}
 		setStars(starsContainer);
 
-	}, [])
+	}, [score])
 
   return (
     <Link className="grid-box" to={`/${typeOfItem}/${mal_id}`}>

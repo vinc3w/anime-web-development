@@ -64,6 +64,7 @@ function Top({ setSidePanelAddOn }) {
     if (page === 1) setData(null);
     fetchData();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
 	
 	useEffect(() => {
@@ -78,12 +79,14 @@ function Top({ setSidePanelAddOn }) {
 
     return () => isUnmounted.current = true;
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [type, subtype])
 
   useEffect(() => {
 
     setSidePanelAddOn(showTopPanel && <TopPanel type={type} subtype={subtype} />)
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showTopPanel, type, subtype])
 
   return (

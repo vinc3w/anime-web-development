@@ -74,6 +74,7 @@ function Episodes({ title }) {
 
 		return () => isUnmounted.current = true;
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [page, id])
 
 	return (

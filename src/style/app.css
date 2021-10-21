@@ -450,7 +450,7 @@ li {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.App .list-box-container .list-box .title .info, .App .list-box-container .list-box-skeleton .title .info {
+.App .list-box-container .list-box .title .info-list li, .App .list-box-container .list-box-skeleton .title .info-list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,18 +463,29 @@ li {
   margin-top: 5px;
 }
 
-.App .list-box-container .list-box .title .info.skeleton-loading, .App .list-box-container .list-box-skeleton .title .info.skeleton-loading {
+.App .list-box-container .list-box .title .info-list li.score, .App .list-box-container .list-box-skeleton .title .info-list li.score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .list-box-container .list-box .title .info-list li.skeleton-loading, .App .list-box-container .list-box-skeleton .title .info-list li.skeleton-loading {
   height: 15px;
   width: 120px;
 }
 
-.App .list-box-container .list-box .title .info .label, .App .list-box-container .list-box-skeleton .title .info .label {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+.App .list-box-container .list-box .title .info-list li i, .App .list-box-container .list-box-skeleton .title .info-list li i {
+  font-size: 15px;
 }
 
-.App .list-box-container .list-box .title .info .value, .App .list-box-container .list-box-skeleton .title .info .value {
-  font-size: 13px;
+.App .list-box-container .list-box .title .info-list li i.checked, .App .list-box-container .list-box-skeleton .title .info-list li i.checked {
+  color: #ffd000;
 }
 
 .App .grid-box-container {
@@ -602,7 +613,7 @@ li {
   font-size: 14px;
 }
 
-.App .grid-box-container .grid-box .title h2.skeleton-loading, .App .grid-box-container .grid-box-skeleton .title h2.skeleton-loading {
+.App .grid-box-container .grid-box .title span:first-of-type.skeleton-loading, .App .grid-box-container .grid-box-skeleton .title span:first-of-type.skeleton-loading {
   height: 18px;
   width: 100%;
 }

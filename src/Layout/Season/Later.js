@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { xhr } from "../../utils/index";
 import Error from "../../Components/Error";
 import GridBox from "../../Components/GridBox";
@@ -42,6 +41,7 @@ function Later({ setSidePanelAddOn, showSeasonPanel }) {
 
 		return () => isUnmounted.current = true;
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	return (

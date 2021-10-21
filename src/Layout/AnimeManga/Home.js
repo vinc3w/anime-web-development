@@ -82,7 +82,7 @@ function Home({ breakLayout, data }) {
 				<span>General</span>
 			</div>
 			<p>{ data.synopsis }</p>
-			{ data.trailer_url && <iframe src={data.trailer_url} frameBorder="0"></iframe> }
+			{ data.trailer_url && <iframe src={data.trailer_url} title={data.title} frameBorder="0"></iframe> }
 			<ul className="info-list">
 				<li>
 					<span className="label">TYPE:&nbsp;</span>

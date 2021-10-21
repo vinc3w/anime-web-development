@@ -50,6 +50,7 @@ function SelectMenu({ options, selected, setSelected }) {
 		}))
 		changeOptionList();
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selectedValue])
 
 	return (

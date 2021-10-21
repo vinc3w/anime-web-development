@@ -61,7 +61,7 @@ function Stats({ title, type, stats }) {
 					</>
 				}
 				{
-					type == "manga" &&
+					type === "manga" &&
 					<>
 					<li>
 						<span className="label">PLAN TO READ:</span>

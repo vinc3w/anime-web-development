@@ -24,7 +24,7 @@ function ListBox({ item }) {
 		}
 		setStars(starsContainer);
 
-	}, [])
+	}, [score])
 
 	return (
 		<div className="list-box">
@@ -42,14 +42,16 @@ function ListBox({ item }) {
 					<Link className="title-a" to={`/anime/${mal_id}`} title={title}>
 						<h2>{ title } <span>{ type }</span></h2>
 					</Link>
-					<div className="info">
-						<span className="label">Eps:&nbsp;</span>
-						<span className="value">{ episodes || "none" }</span>
-					</div>
-					<div className="info">
-						<span className="label">Score:&nbsp;</span>
-						<span className="value">{ score } out of 10</span>
-					</div>
+					<ul className="info-list">
+						<li className="info">
+							<span className="label">EPS:&nbsp;</span>
+							<span className="value">{ episodes || "none" }</span>
+						</li>
+						<li className="info score">
+							<span className="label">SCORE:&nbsp;</span>
+							<span className="value">{ stars }</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

@@ -49,6 +49,7 @@ function Season({ setSidePanelAddOn, showSeasonPanel }) {
 
 		setSidePanelAddOn(showSeasonPanel && <SeasonPanel setData={setData} />);
 		
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [showSeasonPanel])
 
 	useEffect(() => {

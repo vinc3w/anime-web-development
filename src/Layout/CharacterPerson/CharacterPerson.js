@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Switch, Route, useParams, Link } from "react-router-dom";
+import { Switch, Route, useParams } from "react-router-dom";
 import { xhr } from "../../utils/index";
 import Home from "./Home";
 import Pictures from "./Pictures";
@@ -14,27 +14,23 @@ function CharacterPerson() {
 	const { type, id, subtype } = useParams();
 	const isUnmounted = useRef(false);
 
+	const fetchData = async (url, setter) => {
+		isUnmounted.current = false;
+		try {
+			const response = await xhr("GET", url);
+			const parsed = JSON.parse(response);
+			if (isUnmounted.current) return;
+			setter(parsed);
+		} catch(err) {
+			if (isUnmounted.current) return;
+			setConnectionError(true);
+			setter(<Error message="No Connection" />);
+		}
+	}
+
 	useEffect(() => {
 
-		const fetchMainData = async () => {
-			isUnmounted.current = false;
-			try {
-				const response = await xhr(
-					"GET",
-					`https://api.jikan.moe/v3/${type}/${id}`
-				);
-				const parsed = JSON.parse(response);
-				console.log(parsed)
-				if (isUnmounted.current) return;
-				setMainData(parsed);
-			} catch(err) {
-				if (isUnmounted.current) return;
-				setConnectionError(true);
-				setMainData(<Error message="No Connection" />);
-			}
-		}
-
-		fetchMainData();
+		fetchData(`https://api.jikan.moe/v3/${type}/${id}`, setMainData);
 
 		return () => isUnmounted.current = true;
 
@@ -42,25 +38,9 @@ function CharacterPerson() {
 
 	useEffect(() => {
 
-		const fetchData = async () => {
-			if (subtype !== "pictures") return;
-			isUnmounted.current = false;
-			try {
-				const response = await xhr(
-					"GET",
-					`https://api.jikan.moe/v3/${type}/${id}/pictures`
-				);
-				const parsed = JSON.parse(response);
-				if (isUnmounted.current) return;
-				setData(parsed);
-			} catch(err) {
-				if (isUnmounted.current) return;
-				setConnectionError(true);
-				setData(<Error message="No Connection" />);
-			}
+		if (subtype === "pictures") {
+			fetchData(`https://api.jikan.moe/v3/${type}/${id}/pictures`, setData);
 		}
-
-		fetchData();
 
 		return () => isUnmounted.current = true;
 
@@ -70,30 +50,34 @@ function CharacterPerson() {
 
 		document.title = `${type[0].toUpperCase () + type.slice(1)} - ${mainData ? mainData.name : ""} | ANIME WEB`;
 
-	}, [mainData])
+	}, [mainData, type])
 
 	return (
 		<div className={subtype ? "character-person " + subtype : "character-person home-page"}>
-			<Switch>
-				<Route exact path="/:type/:id">
-					{
-						mainData ?
-						<Home data={mainData} type={type} /> :
-						<div className="throbber-container">
-							<Throbber />
-						</div>
-					}
-				</Route>
-				<Route exact path="/:type/:id/pictures">
-					{
-						(mainData && data) ?
-						<Pictures type={type} data={mainData} pictures={data} /> :
-						<div className="throbber-container">
-							<Throbber />
-						</div>
-					}
-				</Route>
-			</Switch>
+			{
+				connectionError ?
+				data || mainData : 
+				<Switch>
+					<Route exact path="/:type/:id">
+						{
+							mainData ?
+							<Home data={mainData} type={type} /> :
+							<div className="throbber-container">
+								<Throbber />
+							</div>
+						}
+					</Route>
+					<Route exact path="/:type/:id/pictures">
+						{
+							(mainData && data) ?
+							<Pictures type={type} data={mainData} pictures={data} /> :
+							<div className="throbber-container">
+								<Throbber />
+							</div>
+						}
+					</Route>
+				</Switch>
+			}
 		</div>
 	);
 }

@@ -55,7 +55,7 @@ function AnimeManga() {
 
 		document.title = `${type[0].toUpperCase () + type.slice(1)} - ${mainData ? mainData.title : ""} | ANIME WEB`;
 
-	}, [mainData])
+	}, [mainData, type])
 
   useEffect(() => {
 

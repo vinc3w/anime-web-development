@@ -59,6 +59,7 @@ function Search({ setSidePanelAddOn }) {
 		if (page === 1) setData(null);
 		fetchData();
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [page])			
 	
 	useEffect(() => {
@@ -73,6 +74,7 @@ function Search({ setSidePanelAddOn }) {
 
 		return () => isUnmounted.current = true;
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location])
 
 	useEffect(() => {
@@ -81,6 +83,7 @@ function Search({ setSidePanelAddOn }) {
 			(type === "anime" || type === "manga") && showFilterPanel && <FilterPanel type={type} />
 		)
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [type, showFilterPanel])
 
   useEffect(() => {

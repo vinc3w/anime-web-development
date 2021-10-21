@@ -14,7 +14,7 @@ function SeasonPanel({ setData }) {
 
 		if (input.current) input.current.value = parseInt(params.year);
 
-	}, [])
+	}, [params.year])
 
 	const handleSubmit = () => {
 		if (!input.current.value || !season) return;
