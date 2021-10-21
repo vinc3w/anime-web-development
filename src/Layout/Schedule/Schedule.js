@@ -83,6 +83,12 @@ function Schedule({ setSidePanelAddOn }) {  // small screen size panel
 
 	}, [showSchedulePanel, day])
 
+	useEffect(() => {
+
+		document.title = `Schedule ${day ? "- " + day[0].toUpperCase() + day.slice(1) + " " : ""}| ANIME WEB`;
+
+	}, [day])
+
 	return (
 		<div className="schedule">
 			<div className="heading-title">

@@ -74,6 +74,12 @@ function Genre() {
 
 	}, [type, id])
 
+	useEffect(() => {
+
+		document.title = `Genre ${genre ? genre + " " : ""}| ANIME WEB`;
+
+	}, [genre])
+
 	return (
 		<div className="genre">
       <div className="heading-title">

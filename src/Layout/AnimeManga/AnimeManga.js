@@ -51,6 +51,12 @@ function AnimeManga() {
 
 	}, [type, id, subtype])
 
+	useEffect(() => {
+
+		document.title = `${type[0].toUpperCase () + type.slice(1)} - ${mainData ? mainData.title : ""} | ANIME WEB`;
+
+	}, [mainData])
+
   useEffect(() => {
 
     const handleWindowResize = () => setBreakLayout(

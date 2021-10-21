@@ -10,7 +10,7 @@ import apiUrl from "./apiUrl";
 import Error from "../../Components/Error";
 import FilterPanel from "./FilterPanel";
 
-function Search({ setSidePanelAddOn }) { // useeffect depencies
+function Search({ setSidePanelAddOn }) {
 
 	const [data, setData] = useState(null);
 	const [page, setPage] = useState(1);
@@ -63,6 +63,8 @@ function Search({ setSidePanelAddOn }) { // useeffect depencies
 	
 	useEffect(() => {
 
+		document.title = `Search ${type[0].toUpperCase() + type.slice(1)} - ${querys.q} | ANIME WEB`;
+
 		if (page === 1) {
 			setData(null);
 			fetchData();
@@ -97,7 +99,7 @@ function Search({ setSidePanelAddOn }) { // useeffect depencies
 		<>
 		<div className="search">
       <div className="heading-title">
-				<span>{ querys.q }</span>
+				<span>{type[0].toUpperCase() + type.slice(1)} - { querys.q }</span>
 			</div>
 			{ !showFilterPanel && <FilterPanel type={type} /> }
 			<div className="content grid-box-container">

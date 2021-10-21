@@ -51,6 +51,12 @@ function Season({ setSidePanelAddOn, showSeasonPanel }) {
 		
 	}, [showSeasonPanel])
 
+	useEffect(() => {
+
+		document.title = `Season ${time ? "- " + time + " " : ""}| ANIME WEB`;
+
+	}, [season, year, time])
+
 	return (
 		<>
 			<div className="heading-title">

@@ -67,6 +67,12 @@ function Producer() {
 
   }, [type, id])
 
+  useEffect(() => {
+
+    document.title = `${type[0].toUpperCase() + type.slice(1)} - ${name ? " " + name : ""} | ANIME WEB`;
+
+  }, [type, id, name])
+
   return (
     <div className="top">
       <div className="heading-title">

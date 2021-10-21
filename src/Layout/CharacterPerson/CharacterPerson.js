@@ -66,13 +66,23 @@ function CharacterPerson() {
 
 	}, [type, id, subtype])
 
-	if (!mainData) return null;
+	useEffect(() => {
+
+		document.title = `${type[0].toUpperCase () + type.slice(1)} - ${mainData ? mainData.name : ""} | ANIME WEB`;
+
+	}, [mainData])
 
 	return (
 		<div className={subtype ? "character-person " + subtype : "character-person home-page"}>
 			<Switch>
 				<Route exact path="/:type/:id">
-					<Home data={mainData} type={type} />
+					{
+						mainData ?
+						<Home data={mainData} type={type} /> :
+						<div className="throbber-container">
+							<Throbber />
+						</div>
+					}
 				</Route>
 				<Route exact path="/:type/:id/pictures">
 					{

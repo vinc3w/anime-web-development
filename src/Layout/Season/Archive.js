@@ -31,6 +31,8 @@ function Archive({ setSidePanelAddOn, showSeasonPanel }) {
 
 	useEffect(() => {
 
+		document.title = "Season Archive | ANIME WEB";
+
 		const fetchData = async () => {
 			isUnmounted.current = false;
 			try {

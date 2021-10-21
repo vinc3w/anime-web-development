@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import Selects from "./Selects";
 import CheckBoxes from "./CheckBoxes";
@@ -15,6 +15,12 @@ function AdvancedSearch() {
 	const [excludeGenres, setExcludeGenres] = useState("1");
 	const input = useRef(null);
 	const history = useHistory();
+
+	useEffect(() => {
+
+		document.title = "Advanced Search | ANIME WEB";
+
+	}, [])
 	
 	const handleFormSubmit = e => {
 		e.preventDefault();

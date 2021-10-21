@@ -13,6 +13,8 @@ function Later({ setSidePanelAddOn, showSeasonPanel }) {
 
 	useEffect(() => {
 
+		document.title = "Season Later | ANIME WEB";
+
 		const fetchData = async () => {
 			isUnmounted.current = false;
 			try {

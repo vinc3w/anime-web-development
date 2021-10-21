@@ -51,9 +51,9 @@ function SeasonPanel({ setData }) {
 			}
 			<ul className="season-panel-nav">
 				<li className="title">More</li>
-				<li className={location.pathname.startsWith("/season") ? "on-here" : ""}><Link to="/season">Home</Link></li>
-				<li className={location.pathname.startsWith("/archive") ? "on-here" : ""}><Link to="/season/archive">Archive</Link></li>
-				<li className={location.pathname.startsWith("/later") ? "on-here" : ""}><Link to="/season/later">Later</Link></li>
+				<li className={location.pathname === "/season" ? "on-here" : ""}><Link to="/season">Home</Link></li>
+				<li className={location.pathname === "/season/archive" ? "on-here" : ""}><Link to="/season/archive">Archive</Link></li>
+				<li className={location.pathname === "/season/later" ? "on-here" : ""}><Link to="/season/later">Later</Link></li>
 			</ul>
 		</>
 	);

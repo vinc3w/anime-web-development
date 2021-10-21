@@ -68,6 +68,8 @@ function Top({ setSidePanelAddOn }) {
 	
 	useEffect(() => {
 
+    document.title = `Top${subtype ? " " + subtype[0].toUpperCase() + subtype.slice(1) : ""}${type === "anime" ? " Anime" : " Manga"} | ANIME WEB`;
+
     if (page === 1) {
       setData(null);
       fetchData();
@@ -87,7 +89,7 @@ function Top({ setSidePanelAddOn }) {
   return (
     <div className="top">
       <div className="heading-title">
-        <span className="title">Top</span>
+        <span className="title">Top{subtype ? " " + subtype[0].toUpperCase() + subtype.slice(1) : ""}{type === "anime" ? " Anime" : " Manga"}</span>
       </div>
       { !showTopPanel && <TopPanel type={type} subtype={subtype} /> }
       <div className="grid-box-container">

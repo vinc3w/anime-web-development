@@ -21,15 +21,15 @@ function App() { // rmeove page side panel add on on url change
 							<Top setSidePanelAddOn={setSidePanelAddOn} />
 							<SidePanel>{ sidePanelAddOn }</SidePanel>
 						</Route>
-						<Route exact path="/search/:type" component={Search}>
+						<Route exact path="/search/:type">
 							<Search setSidePanelAddOn={setSidePanelAddOn} />
 							<SidePanel>{ sidePanelAddOn }</SidePanel>
 						</Route>
-						<Route path="/advanced-search" component={AdvancedSearch}>
+						<Route path="/advanced-search">
 							<AdvancedSearch/>
 							<SidePanel />
 						</Route>
-						<Route exact path={["/genre/:type", "/genre/:type/:id"]} component={Genre}>
+						<Route exact path={["/genre/:type", "/genre/:type/:id"]}>
 							<Genre/>
 							<SidePanel />
 						</Route>
